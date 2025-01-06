@@ -270,9 +270,9 @@
 
       let sendFn = ()=>{
         let sendMsg = chat_input.value
-        chatUl.innerHTML += `<li class="right">
-          <span>${sendMsg}</span>
+        chatUl.innerHTML += `<li class="left">
           <img src="./assets/me.jpg" alt="">
+          <span>${sendMsg}</span>
         </li>`
         chat_input.value = ''
         chatDiv.scrollTop = chatDiv.scrollHeight
@@ -282,9 +282,9 @@
           spoken: sendMsg
         }
       }).then(result=>{
-        chatUl.innerHTML += `<li class="left">
-        <img src="./assets/me.jpg" alt="">
+        chatUl.innerHTML += `<li class="right">
         <span>${result.data.data.info.text}</span>
+        <img src="./assets/you.png" alt="">
       </li>
         `
         chatDiv.scrollTop = chatDiv.scrollHeight
